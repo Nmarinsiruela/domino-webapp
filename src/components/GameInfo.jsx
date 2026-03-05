@@ -28,7 +28,7 @@ export default function GameInfo({
         </div>
 
         <div className="boneyard-info">
-          <span>🦴 Pozo</span>
+          <span>🃏 Mazo</span>
           <span className="boneyard-count">{boneyard.length}</span>
         </div>
 
@@ -45,7 +45,7 @@ export default function GameInfo({
       <div className="action-buttons">
         {canDraw && (
           <button className="btn btn-draw" onClick={onDraw}>
-            Robar del pozo ({boneyard.length})
+            Robar del mazo ({boneyard.length})
           </button>
         )}
         {mustPass && (

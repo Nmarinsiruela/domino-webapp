@@ -66,8 +66,8 @@ function reducer(state, action) {
         message: canPlayNow
           ? `Robaste [${drawn.left}|${drawn.right}]. ¡Ahora juega!`
           : rest.length === 0
-            ? 'Pozo vacío. Debes pasar.'
-            : `Robaste [${drawn.left}|${drawn.right}]. Roba de nuevo o juega.`,
+            ? 'Mazo vacío. Debes pasar.'
+            : `Robaste [${drawn.left}|${drawn.right}]. Roba de nuevo o juega una ficha.`,
       };
     }
 
@@ -110,7 +110,7 @@ function reducer(state, action) {
             ...state,
             aiHand: [...state.aiHand, drawn],
             boneyard: rest,
-            message: 'La IA robó del pozo...',
+            message: 'La IA robó del mazo...',
             // stay on AI turn
           };
         }

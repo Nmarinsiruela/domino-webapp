@@ -60,17 +60,15 @@ export function placeTile(tile, board, end) {
   const { leftEnd, rightEnd } = getBoardEnds(board);
 
   if (end === 'left') {
-    // We need tile's matching pip to face left (outward)
-    // The connecting pip faces the board; the outward pip becomes the new leftEnd
-    const flipped = tile.right === leftEnd; // right connects inward
+    // New tile is prepended. Its RIGHT half (b) must match leftEnd.
+    // b = tile.right when not flipped, b = tile.left when flipped.
+    const flipped = tile.left === leftEnd; // flip so that b = tile.left = leftEnd
     return [{ ...tile, flipped }, ...board];
   } else {
-    // right end
-    const flipped = tile.left === rightEnd; // left connects inward, right is open — wait:
-    // If tile.left === rightEnd => not flipped (left connects, right is new end)
-    // If tile.right === rightEnd => flipped (right connects, left is new end)
-    const flip = tile.right === rightEnd;
-    return [...board, { ...tile, flipped: flip }];
+    // New tile is appended. Its LEFT half (a) must match rightEnd.
+    // a = tile.left when not flipped, a = tile.right when flipped.
+    const flipped = tile.right === rightEnd; // flip so that a = tile.right = rightEnd
+    return [...board, { ...tile, flipped }];
   }
 }
 
