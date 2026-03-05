@@ -1,0 +1,64 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Paleta retro: fieltro oscuro + madera + marfil */
+  --bg: #0e1a0e;
+  --felt: #14380e;
+  --felt-border: #2a5a1a;
+  --surface: #1e0f06;
+  --surface2: #2a1608;
+  --border: #6b3d12;
+  --border-light: #a0622a;
+
+  --accent: #d4a017;       /* oro antiguo */
+  --accent-bright: #f5c518; /* amarillo señal */
+  --accent2: #e8c96a;
+  --text: #f0e6cc;
+  --text-muted: #b09060;
+  --text-dark: #1a0e04;
+
+  --tile-bg: #f7f0dc;
+  --tile-pip: #0a0a0a;
+  --tile-border: #8b6020;
+  --tile-divider: #6b3d12;
+  --tile-selected-border: #ff8c00;
+
+  --danger: #c0392b;
+  --shadow: 0 3px 10px rgba(0,0,0,0.6);
+  --shadow-deep: 0 6px 20px rgba(0,0,0,0.7);
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border: 3px solid var(--border-light);
+  border-radius: 6px;
+  padding: 0.7rem 1.4rem;
+  transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: 0.03em;
+}
+button:active { transform: scale(0.95); }
+button:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
